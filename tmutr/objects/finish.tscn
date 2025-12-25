@@ -1,0 +1,81 @@
+[gd_scene load_steps=8 format=3 uid="uid://c0qwnjyikbwgh"]
+
+[ext_resource type="Script" uid="uid://1fgaachx0xfy" path="res://objects/finish.gd" id="1_332tb"]
+[ext_resource type="Texture2D" uid="uid://c7fsvyibc16xy" path="res://cars/finish.png" id="2_2ytni"]
+[ext_resource type="PackedScene" uid="uid://dumraa3ngb50j" path="res://objects/road.tscn" id="3_2ytni"]
+[ext_resource type="Script" uid="uid://jyvvbhfwcprx" path="res://objects/finish_area.gd" id="3_u7xq1"]
+[ext_resource type="Texture2D" uid="uid://cp188nkc1bj2j" path="res://images/endd.png" id="4_t63jo"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_wymro"]
+a = Vector2(-1, -1)
+b = Vector2(238, -1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5axhl"]
+size = Vector2(49, 76)
+
+[node name="finish" type="Node2D"]
+z_index = -2
+script = ExtResource("1_332tb")
+
+[node name="Finish" type="Sprite2D" parent="."]
+position = Vector2(119.99999, 120)
+scale = Vector2(5, 5)
+texture = ExtResource("2_2ytni")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(2, 4)
+shape = SubResource("SegmentShape2D_wymro")
+
+[node name="road" parent="CharacterBody2D" instance=ExtResource("3_2ytni")]
+position = Vector2(240, 0)
+
+[node name="road" parent="CharacterBody2D/road" instance=ExtResource("3_2ytni")]
+position = Vector2(240, 0)
+
+[node name="road" parent="CharacterBody2D/road/road" instance=ExtResource("3_2ytni")]
+position = Vector2(240, 0)
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("3_u7xq1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(196.5, 43)
+shape = SubResource("RectangleShape2D_5axhl")
+
+[node name="Endd" type="Sprite2D" parent="."]
+visible = false
+z_index = 5
+position = Vector2(42.000008, 42.000004)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("4_t63jo")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CharacterBody2D2"]
+position = Vector2(2, 84)
+shape = SubResource("SegmentShape2D_wymro")
+
+[node name="endoptions" type="Node2D" parent="."]
+z_index = 4
+
+[node name="retry" type="Button" parent="endoptions"]
+offset_left = -136.0
+offset_top = -111.0
+offset_right = -46.0
+offset_bottom = -41.0
+text = "Retry"
+
+[node name="back" type="Button" parent="endoptions"]
+offset_left = 60.0
+offset_top = -106.0
+offset_right = 160.0
+offset_bottom = -36.0
+text = "Back"
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="pressed" from="endoptions/retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="endoptions/back" to="." method="_on_back_pressed"]

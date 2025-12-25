@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://dcrebj547jojk"]
+
+[ext_resource type="PackedScene" uid="uid://dumraa3ngb50j" path="res://objects/road.tscn" id="1_i3jhy"]
+[ext_resource type="PackedScene" uid="uid://d0xvrysceu8ot" path="res://the_car/car1.tscn" id="2_i3jhy"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_qfpu4"]
+b = Vector2(0, 81)
+
+[node name="start" type="Node2D"]
+
+[node name="road" parent="." instance=ExtResource("1_i3jhy")]
+position = Vector2(0, -2)
+
+[node name="road" parent="road" instance=ExtResource("1_i3jhy")]
+position = Vector2(-239, 0)
+
+[node name="road" parent="road/road" instance=ExtResource("1_i3jhy")]
+position = Vector2(-240, 0)
+
+[node name="road2" parent="road/road" instance=ExtResource("1_i3jhy")]
+position = Vector2(-239, 0)
+
+[node name="road" parent="road/road/road2" instance=ExtResource("1_i3jhy")]
+position = Vector2(-241, 0)
+
+[node name="road" parent="road/road/road2/road" instance=ExtResource("1_i3jhy")]
+position = Vector2(-239, 0)
+
+[node name="road" parent="road/road/road2/road/road" instance=ExtResource("1_i3jhy")]
+position = Vector2(-240, 0)
+
+[node name="road2" parent="road/road/road2/road/road" instance=ExtResource("1_i3jhy")]
+position = Vector2(-239, 0)
+
+[node name="road" parent="road/road/road2/road/road/road2" instance=ExtResource("1_i3jhy")]
+position = Vector2(-240, 0)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("SegmentShape2D_qfpu4")
+
+[node name="car" parent="." instance=ExtResource("2_i3jhy")]
+position = Vector2(98, 26)

@@ -1,0 +1,57 @@
+[gd_scene load_steps=7 format=3 uid="uid://cwrwgpqq2lw8d"]
+
+[ext_resource type="Script" uid="uid://cwoxfi51g0c2u" path="res://objects/speeder.gd" id="1_4ss6t"]
+[ext_resource type="Texture2D" uid="uid://cmo10ucndgq3g" path="res://images/road.png" id="2_8oyuu"]
+[ext_resource type="Texture2D" uid="uid://d17ktl3dhqtwn" path="res://images/loadidk.png" id="3_4ss6t"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_4ss6t"]
+a = Vector2(-20.999992, 1.0000153)
+b = Vector2(256, 1.0000153)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_8oyuu"]
+a = Vector2(-21.000023, 2)
+b = Vector2(256.99997, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6tm5w"]
+size = Vector2(242, 73)
+
+[node name="Speeder" type="Node2D"]
+script = ExtResource("1_4ss6t")
+
+[node name="Road" type="CharacterBody2D" parent="."]
+position = Vector2(121, 121)
+scale = Vector2(5, 5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Road"]
+position = Vector2(-24.000002, -20.200003)
+scale = Vector2(0.19999999, 0.19999999)
+shape = SubResource("SegmentShape2D_4ss6t")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(503, 8)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(-501, -68)
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("SegmentShape2D_8oyuu")
+
+[node name="Road2" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(119.00003, 59.000004)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8oyuu")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(6, 38)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(112, -57.5)
+shape = SubResource("RectangleShape2D_6tm5w")
+
+[node name="Loadidk" type="Sprite2D" parent="Area2D"]
+position = Vector2(120, -119)
+texture = ExtResource("3_4ss6t")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

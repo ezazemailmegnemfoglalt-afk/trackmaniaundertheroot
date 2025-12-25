@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://dumraa3ngb50j"]
+
+[ext_resource type="Texture2D" uid="uid://cmo10ucndgq3g" path="res://images/road.png" id="1_6uuow"]
+[ext_resource type="Script" uid="uid://sovk86qdl7nd" path="res://objects/road.gd" id="1_psde0"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_psde0"]
+a = Vector2(-21.000023, 2)
+b = Vector2(256.99997, 2)
+
+[node name="road" type="Node2D"]
+script = ExtResource("1_psde0")
+
+[node name="Road" type="CharacterBody2D" parent="."]
+position = Vector2(121, 121)
+scale = Vector2(5, 5)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Road"]
+position = Vector2(-24.199999, -24.199999)
+scale = Vector2(0.19999999, 0.19999999)
+shape = SubResource("SegmentShape2D_psde0")
+
+[node name="Road2" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(120, 120)
+scale = Vector2(5, 5)
+texture = ExtResource("1_6uuow")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(2.2888184e-05, 81)
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("SegmentShape2D_psde0")

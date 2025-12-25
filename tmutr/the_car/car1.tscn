@@ -1,0 +1,61 @@
+[gd_scene load_steps=9 format=3 uid="uid://d0xvrysceu8ot"]
+
+[ext_resource type="Texture2D" uid="uid://dta4n3qvbk7hk" path="res://images/car1.png" id="1_3bwdr"]
+[ext_resource type="Script" uid="uid://dwdhvg0pmrt5n" path="res://cars/car_1.gd" id="1_ru40v"]
+[ext_resource type="Texture2D" uid="uid://fbuh8fp7qjse" path="res://images/megy1.png" id="3_3bwdr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ru40v"]
+radius = 22.561028
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ru40v"]
+atlas = ExtResource("1_3bwdr")
+region = Rect2(0, 0, 325, 157)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3bwdr"]
+atlas = ExtResource("1_3bwdr")
+region = Rect2(325, 0, 325, 157)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_650wv"]
+atlas = ExtResource("3_3bwdr")
+region = Rect2(0, 0, 322, 155)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_650wv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ru40v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3bwdr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_650wv")
+}],
+"loop": true,
+"name": &"megy",
+"speed": 5.0
+}]
+
+[node name="car" type="CharacterBody2D" groups=["player"]]
+script = ExtResource("1_ru40v")
+
+[node name="hitbox" type="CollisionShape2D" parent="." groups=["player"]]
+position = Vector2(92, 19)
+shape = SubResource("CircleShape2D_ru40v")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.5, 1.5)
+position_smoothing_enabled = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(13, -20)
+sprite_frames = SubResource("SpriteFrames_650wv")
+animation = &"megy"
+flip_h = true
+
+[node name="Timer" type="Timer" parent="."]

@@ -1,0 +1,90 @@
+[gd_scene load_steps=12 format=3 uid="uid://dt0rcd23nvyg"]
+
+[ext_resource type="Script" uid="uid://c4cbhp8ibtam2" path="res://objects/lemelkedo.gd" id="1_8u72n"]
+[ext_resource type="Texture2D" uid="uid://ck0d66p8gpxt4" path="res://images/emelkedo.png" id="1_n36mk"]
+[ext_resource type="PackedScene" uid="uid://d0xvrysceu8ot" path="res://the_car/car1.tscn" id="2_5df4y"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_5df4y"]
+a = Vector2(572, 405)
+b = Vector2(223, 404)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_8u72n"]
+a = Vector2(841, 408)
+b = Vector2(579, 271)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_kctrl"]
+a = Vector2(1179, 270)
+b = Vector2(832, 273)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3wm15"]
+radius = 8.0
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_5840i"]
+a = Vector2(564, 327)
+b = Vector2(225, 323)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_cjmdq"]
+a = Vector2(743, 323)
+b = Vector2(480, 139)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_nmogy"]
+a = Vector2(1180, 149)
+b = Vector2(826, 150)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_n36mk"]
+a = Vector2(-126999, 2828)
+b = Vector2(24341, -38)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_8u72n")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+z_index = -1
+
+[node name="Emelkedo" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(709, 312)
+scale = Vector2(7.1222215, 5)
+texture = ExtResource("1_n36mk")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(617, 2)
+shape = SubResource("SegmentShape2D_5df4y")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(0, -2)
+shape = SubResource("SegmentShape2D_8u72n")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(-604, -2)
+shape = SubResource("SegmentShape2D_kctrl")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(576, 276)
+shape = SubResource("CircleShape2D_3wm15")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CharacterBody2D2"]
+position = Vector2(618, 1)
+shape = SubResource("SegmentShape2D_5840i")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="CharacterBody2D2"]
+position = Vector2(101, 1)
+shape = SubResource("SegmentShape2D_cjmdq")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="CharacterBody2D2"]
+position = Vector2(-598, -10)
+shape = SubResource("SegmentShape2D_nmogy")
+
+[node name="szopacs" type="Area2D" parent="."]
+position = Vector2(104, 314)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="szopacs"]
+position = Vector2(385, -349)
+shape = SubResource("SegmentShape2D_n36mk")
+
+[node name="car" parent="." instance=ExtResource("2_5df4y")]
+position = Vector2(325, 203)
