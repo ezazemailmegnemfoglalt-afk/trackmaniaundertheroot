@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cjs138vqfvm7m"]
+[gd_scene load_steps=4 format=3 uid="uid://cjs138vqfvm7m"]
 
 [ext_resource type="Script" uid="uid://bp48xvd3wumq0" path="res://objects/jumper.gd" id="1_3f61h"]
 [ext_resource type="Texture2D" uid="uid://c7d4g5thmbwjj" path="res://images/godotwaka2.png" id="1_651r0"]
 [ext_resource type="PackedScene" uid="uid://dumraa3ngb50j" path="res://objects/road.tscn" id="3_3f61h"]
-[ext_resource type="PackedScene" uid="uid://d0xvrysceu8ot" path="res://the_car/car1.tscn" id="4_fl5cd"]
 
 [node name="jumper" type="Node2D"]
 script = ExtResource("1_3f61h")
@@ -15,6 +14,3 @@ texture = ExtResource("1_651r0")
 
 [node name="road" parent="." instance=ExtResource("3_3f61h")]
 position = Vector2(78, 602)
-
-[node name="car" parent="." instance=ExtResource("4_fl5cd")]
-position = Vector2(171, 607)

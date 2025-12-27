@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://c0qwnjyikbwgh"]
 
 [ext_resource type="Script" uid="uid://1fgaachx0xfy" path="res://objects/finish.gd" id="1_332tb"]
-[ext_resource type="Texture2D" uid="uid://c7fsvyibc16xy" path="res://cars/finish.png" id="2_2ytni"]
+[ext_resource type="Texture2D" uid="uid://c7fsvyibc16xy" path="res://the_car/finish.png" id="2_2ytni"]
 [ext_resource type="PackedScene" uid="uid://dumraa3ngb50j" path="res://objects/road.tscn" id="3_2ytni"]
 [ext_resource type="Script" uid="uid://jyvvbhfwcprx" path="res://objects/finish_area.gd" id="3_u7xq1"]
 [ext_resource type="Texture2D" uid="uid://cp188nkc1bj2j" path="res://images/endd.png" id="4_t63jo"]

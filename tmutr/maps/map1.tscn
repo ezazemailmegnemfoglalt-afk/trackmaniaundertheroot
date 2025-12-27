@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://8j74mvh4ktah"]
+[gd_scene load_steps=11 format=3 uid="uid://8j74mvh4ktah"]
 
 [ext_resource type="Texture2D" uid="uid://cspdfktjn7jyq" path="res://images/bg1.png" id="1_lo85r"]
 [ext_resource type="PackedScene" uid="uid://dcrebj547jojk" path="res://objects/start.tscn" id="2_82wqq"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://dt0rcd23nvyg" path="res://objects/lemelkedo.tscn" id="6_0ffs8"]
 [ext_resource type="PackedScene" uid="uid://c0qwnjyikbwgh" path="res://objects/finish.tscn" id="7_t45sv"]
 [ext_resource type="PackedScene" uid="uid://cjs138vqfvm7m" path="res://objects/jumper.tscn" id="8_82wqq"]
+[ext_resource type="Script" uid="uid://xd5b8fqsl20m" path="res://maps/spawnpoint.gd" id="9_7jfso"]
+[ext_resource type="Texture2D" uid="uid://d17ktl3dhqtwn" path="res://images/loadidk.png" id="10_nsdte"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -17,110 +19,1206 @@ position = Vector2(1457.0001, 880)
 scale = Vector2(3, 3)
 texture = ExtResource("1_lo85r")
 
-[node name="start" parent="." instance=ExtResource("2_82wqq")]
-position = Vector2(98, 1048)
-scale = Vector2(0.2, 0.2)
-
 [node name="emelkedo" parent="." instance=ExtResource("3_7jfso")]
 position = Vector2(101, 983)
 scale = Vector2(0.2, 0.2)
 
-[node name="road" parent="." instance=ExtResource("4_nsdte")]
+[node name="map_elements" type="Node" parent="."]
+
+[node name="start" parent="map_elements" instance=ExtResource("2_82wqq")]
+position = Vector2(98, 1048)
+scale = Vector2(0.2, 0.2)
+
+[node name="road" parent="map_elements" instance=ExtResource("4_nsdte")]
 position = Vector2(338.00003, 1020)
 scale = Vector2(0.2, 0.2)
 
-[node name="Speeder" parent="." instance=ExtResource("5_xe5q4")]
+[node name="Speeder" parent="map_elements" instance=ExtResource("5_xe5q4")]
 position = Vector2(489, 1013)
 scale = Vector2(0.2, 0.2)
 
-[node name="road2" parent="." instance=ExtResource("4_nsdte")]
+[node name="road2" parent="map_elements" instance=ExtResource("4_nsdte")]
 position = Vector2(558, 1011)
 scale = Vector2(0.2, 0.2)
 
-[node name="road3" parent="." instance=ExtResource("4_nsdte")]
+[node name="road3" parent="map_elements" instance=ExtResource("4_nsdte")]
 position = Vector2(636.00006, 1037)
 scale = Vector2(0.2, 0.2)
 
-[node name="road4" parent="." instance=ExtResource("4_nsdte")]
+[node name="road4" parent="map_elements" instance=ExtResource("4_nsdte")]
 position = Vector2(698.00006, 1047)
 scale = Vector2(0.2, 0.2)
 
-[node name="road5" parent="." instance=ExtResource("4_nsdte")]
+[node name="road5" parent="map_elements" instance=ExtResource("4_nsdte")]
 position = Vector2(775.00006, 1063)
 scale = Vector2(0.2, 0.2)
 
-[node name="road6" parent="." instance=ExtResource("4_nsdte")]
+[node name="road6" parent="map_elements" instance=ExtResource("4_nsdte")]
 position = Vector2(878.00006, 1060)
 scale = Vector2(0.2, 0.2)
 
-[node name="road7" parent="." instance=ExtResource("4_nsdte")]
+[node name="road7" parent="map_elements" instance=ExtResource("4_nsdte")]
 position = Vector2(958.00006, 1016)
 scale = Vector2(0.2, 0.2)
 
-[node name="road8" parent="." instance=ExtResource("4_nsdte")]
+[node name="road8" parent="map_elements" instance=ExtResource("4_nsdte")]
 position = Vector2(1056, 1009)
 scale = Vector2(0.2, 0.2)
 
-[node name="road9" parent="." instance=ExtResource("4_nsdte")]
+[node name="road9" parent="map_elements" instance=ExtResource("4_nsdte")]
 position = Vector2(1139, 1019)
 scale = Vector2(0.2, 0.2)
 
-[node name="Node2D" parent="." instance=ExtResource("6_0ffs8")]
+[node name="Node2D" parent="map_elements" instance=ExtResource("6_0ffs8")]
 position = Vector2(1217, 1023)
 scale = Vector2(0.2, 0.2)
 
-[node name="finish" parent="." instance=ExtResource("7_t45sv")]
-position = Vector2(1486, 1104)
+[node name="road10" parent="map_elements" instance=ExtResource("4_nsdte")]
+position = Vector2(1594, 1110)
 scale = Vector2(0.2, 0.2)
 
-[node name="road10" parent="." instance=ExtResource("4_nsdte")]
-position = Vector2(1604, 1104)
-scale = Vector2(0.2, 0.2)
-
-[node name="road11" parent="." instance=ExtResource("4_nsdte")]
+[node name="road11" parent="map_elements" instance=ExtResource("4_nsdte")]
 position = Vector2(1694, 1109)
 scale = Vector2(0.2, 0.2)
 
-[node name="road12" parent="." instance=ExtResource("4_nsdte")]
+[node name="road12" parent="map_elements" instance=ExtResource("4_nsdte")]
 position = Vector2(1777, 1114)
 scale = Vector2(0.2, 0.2)
 
-[node name="road13" parent="." instance=ExtResource("4_nsdte")]
+[node name="road13" parent="map_elements" instance=ExtResource("4_nsdte")]
 position = Vector2(1838, 1125)
 scale = Vector2(0.2, 0.2)
 
-[node name="road14" parent="." instance=ExtResource("4_nsdte")]
+[node name="road14" parent="map_elements" instance=ExtResource("4_nsdte")]
 position = Vector2(559, 877)
 scale = Vector2(0.2, 0.2)
 
-[node name="road15" parent="." instance=ExtResource("4_nsdte")]
+[node name="road15" parent="map_elements" instance=ExtResource("4_nsdte")]
 position = Vector2(636, 848)
 scale = Vector2(0.2, 0.2)
 
-[node name="road16" parent="." instance=ExtResource("4_nsdte")]
+[node name="road16" parent="map_elements" instance=ExtResource("4_nsdte")]
 position = Vector2(703, 803)
 scale = Vector2(0.2, 0.2)
 
-[node name="road17" parent="." instance=ExtResource("4_nsdte")]
+[node name="road17" parent="map_elements" instance=ExtResource("4_nsdte")]
 position = Vector2(425, 741)
 scale = Vector2(0.2, 0.2)
 
-[node name="road18" parent="." instance=ExtResource("4_nsdte")]
+[node name="road18" parent="map_elements" instance=ExtResource("4_nsdte")]
 position = Vector2(522, 776)
 scale = Vector2(0.2, 0.2)
 
-[node name="road19" parent="." instance=ExtResource("4_nsdte")]
+[node name="road19" parent="map_elements" instance=ExtResource("4_nsdte")]
 position = Vector2(324, 691)
 scale = Vector2(0.2, 0.2)
 
-[node name="road20" parent="." instance=ExtResource("4_nsdte")]
+[node name="road20" parent="map_elements" instance=ExtResource("4_nsdte")]
 position = Vector2(249, 736)
 scale = Vector2(0.2, 0.2)
 
-[node name="road21" parent="." instance=ExtResource("4_nsdte")]
+[node name="road21" parent="map_elements" instance=ExtResource("4_nsdte")]
 position = Vector2(834, 833)
 scale = Vector2(0.2, 0.2)
 
-[node name="jumper" parent="." instance=ExtResource("8_82wqq")]
+[node name="jumper" parent="map_elements" instance=ExtResource("8_82wqq")]
 position = Vector2(398, 892)
+scale = Vector2(0.2, 0.2)
+
+[node name="road22" parent="map_elements" instance=ExtResource("4_nsdte")]
+position = Vector2(158, 804)
+scale = Vector2(0.2, 0.2)
+
+[node name="road23" parent="map_elements" instance=ExtResource("4_nsdte")]
+position = Vector2(34.000008, 797)
+scale = Vector2(0.2, 0.2)
+
+[node name="road24" parent="map_elements" instance=ExtResource("4_nsdte")]
+position = Vector2(119, 896)
+scale = Vector2(0.2, 0.2)
+
+[node name="road25" parent="map_elements" instance=ExtResource("4_nsdte")]
+position = Vector2(907.99994, 788)
+scale = Vector2(0.2, 0.2)
+
+[node name="road26" parent="map_elements" instance=ExtResource("4_nsdte")]
+position = Vector2(1559.9999, 854)
+scale = Vector2(0.2, 0.2)
+
+[node name="road27" parent="map_elements" instance=ExtResource("4_nsdte")]
+position = Vector2(1065.9999, 817)
+scale = Vector2(0.2, 0.2)
+
+[node name="road28" parent="map_elements" instance=ExtResource("4_nsdte")]
+position = Vector2(1479.9999, 775)
+scale = Vector2(0.2, 0.2)
+
+[node name="road29" parent="map_elements" instance=ExtResource("4_nsdte")]
+position = Vector2(1377.9999, 686)
+scale = Vector2(0.2, 0.2)
+
+[node name="road30" parent="map_elements" instance=ExtResource("4_nsdte")]
+position = Vector2(1311.9999, 735)
+scale = Vector2(0.2, 0.2)
+
+[node name="road31" parent="map_elements" instance=ExtResource("4_nsdte")]
+position = Vector2(1190.9999, 788)
+scale = Vector2(0.2, 0.2)
+
+[node name="road32" parent="map_elements" instance=ExtResource("4_nsdte")]
+position = Vector2(1015.99994, 717)
+scale = Vector2(0.2, 0.2)
+
+[node name="road234" parent="map_elements" instance=ExtResource("4_nsdte")]
+position = Vector2(709, 1238)
+scale = Vector2(0.2, 0.2)
+
+[node name="road282" parent="map_elements" instance=ExtResource("4_nsdte")]
+position = Vector2(823, 1313)
+rotation = -3.1415925
+scale = Vector2(0.2, 0.2)
+
+[node name="road237" parent="map_elements" instance=ExtResource("4_nsdte")]
+position = Vector2(710, 1168)
+scale = Vector2(0.2, 0.2)
+
+[node name="road285" parent="map_elements" instance=ExtResource("4_nsdte")]
+position = Vector2(824, 1243)
+rotation = -3.1415925
+scale = Vector2(0.2, 0.2)
+
+[node name="road33" parent="map_elements" instance=ExtResource("4_nsdte")]
+position = Vector2(1376.9999, 928)
+scale = Vector2(0.2, 0.2)
+
+[node name="road34" parent="map_elements" instance=ExtResource("4_nsdte")]
+position = Vector2(729, 649)
+scale = Vector2(0.2, 0.2)
+
+[node name="road35" parent="map_elements" instance=ExtResource("4_nsdte")]
+position = Vector2(905.99994, 599)
+scale = Vector2(0.2, 0.2)
+
+[node name="road235" parent="map_elements" instance=ExtResource("4_nsdte")]
+position = Vector2(709, 1386)
+scale = Vector2(0.2, 0.2)
+
+[node name="road283" parent="map_elements" instance=ExtResource("4_nsdte")]
+position = Vector2(822.99994, 1461.0001)
+rotation = 3.1415927
+scale = Vector2(0.2, 0.2)
+
+[node name="road238" parent="map_elements" instance=ExtResource("4_nsdte")]
+position = Vector2(710, 1316)
+scale = Vector2(0.2, 0.2)
+
+[node name="road286" parent="map_elements" instance=ExtResource("4_nsdte")]
+position = Vector2(823.99994, 1391.0001)
+rotation = 3.1415927
+scale = Vector2(0.2, 0.2)
+
+[node name="road236" parent="map_elements" instance=ExtResource("4_nsdte")]
+position = Vector2(710, 1526)
+scale = Vector2(0.2, 0.2)
+
+[node name="road284" parent="map_elements" instance=ExtResource("4_nsdte")]
+position = Vector2(824, 1601)
+rotation = -3.1415925
+scale = Vector2(0.2, 0.2)
+
+[node name="road239" parent="map_elements" instance=ExtResource("4_nsdte")]
+position = Vector2(711, 1456)
+scale = Vector2(0.2, 0.2)
+
+[node name="road287" parent="map_elements" instance=ExtResource("4_nsdte")]
+position = Vector2(825, 1531)
+rotation = -3.1415925
+scale = Vector2(0.2, 0.2)
+
+[node name="road240" parent="map_elements" instance=ExtResource("4_nsdte")]
+position = Vector2(710, 1674)
+scale = Vector2(0.2, 0.2)
+
+[node name="road288" parent="map_elements" instance=ExtResource("4_nsdte")]
+position = Vector2(823.99994, 1749.0001)
+rotation = 3.1415927
+scale = Vector2(0.2, 0.2)
+
+[node name="road241" parent="map_elements" instance=ExtResource("4_nsdte")]
+position = Vector2(711, 1604)
+scale = Vector2(0.2, 0.2)
+
+[node name="road289" parent="map_elements" instance=ExtResource("4_nsdte")]
+position = Vector2(824.99994, 1679.0001)
+rotation = 3.1415927
+scale = Vector2(0.2, 0.2)
+
+[node name="road242" parent="map_elements" instance=ExtResource("4_nsdte")]
+position = Vector2(705, 1809)
+scale = Vector2(0.2, 0.2)
+
+[node name="road290" parent="map_elements" instance=ExtResource("4_nsdte")]
+position = Vector2(819, 1884)
+rotation = -3.1415925
+scale = Vector2(0.2, 0.2)
+
+[node name="road243" parent="map_elements" instance=ExtResource("4_nsdte")]
+position = Vector2(706, 1739)
+scale = Vector2(0.2, 0.2)
+
+[node name="road291" parent="map_elements" instance=ExtResource("4_nsdte")]
+position = Vector2(820, 1814)
+rotation = -3.1415925
+scale = Vector2(0.2, 0.2)
+
+[node name="road244" parent="map_elements" instance=ExtResource("4_nsdte")]
+position = Vector2(705, 1957)
+scale = Vector2(0.2, 0.2)
+
+[node name="road292" parent="map_elements" instance=ExtResource("4_nsdte")]
+position = Vector2(818.99994, 2032)
+rotation = 3.1415927
+scale = Vector2(0.2, 0.2)
+
+[node name="road245" parent="map_elements" instance=ExtResource("4_nsdte")]
+position = Vector2(706, 1887)
+scale = Vector2(0.2, 0.2)
+
+[node name="road293" parent="map_elements" instance=ExtResource("4_nsdte")]
+position = Vector2(819.99994, 1962)
+rotation = 3.1415927
+scale = Vector2(0.2, 0.2)
+
+[node name="road246" parent="map_elements" instance=ExtResource("4_nsdte")]
+position = Vector2(706, 2097)
+scale = Vector2(0.2, 0.2)
+
+[node name="road294" parent="map_elements" instance=ExtResource("4_nsdte")]
+position = Vector2(820, 2172)
+rotation = -3.1415925
+scale = Vector2(0.2, 0.2)
+
+[node name="road247" parent="map_elements" instance=ExtResource("4_nsdte")]
+position = Vector2(707, 2027)
+scale = Vector2(0.2, 0.2)
+
+[node name="road295" parent="map_elements" instance=ExtResource("4_nsdte")]
+position = Vector2(821, 2102)
+rotation = -3.1415925
+scale = Vector2(0.2, 0.2)
+
+[node name="road248" parent="map_elements" instance=ExtResource("4_nsdte")]
+position = Vector2(706, 2245)
+scale = Vector2(0.2, 0.2)
+
+[node name="road296" parent="map_elements" instance=ExtResource("4_nsdte")]
+position = Vector2(819.99994, 2320)
+rotation = 3.1415927
+scale = Vector2(0.2, 0.2)
+
+[node name="road249" parent="map_elements" instance=ExtResource("4_nsdte")]
+position = Vector2(707, 2175)
+scale = Vector2(0.2, 0.2)
+
+[node name="road297" parent="map_elements" instance=ExtResource("4_nsdte")]
+position = Vector2(820.99994, 2250)
+rotation = 3.1415927
+scale = Vector2(0.2, 0.2)
+
+[node name="road250" parent="map_elements" instance=ExtResource("4_nsdte")]
+position = Vector2(704, 2321)
+scale = Vector2(0.2, 0.2)
+
+[node name="road251" parent="map_elements" instance=ExtResource("4_nsdte")]
+position = Vector2(749, 2321)
+scale = Vector2(0.2, 0.2)
+
+[node name="spawnpoint" type="Node" parent="."]
+script = ExtResource("9_7jfso")
+
+[node name="spawnpoint" type="Marker2D" parent="spawnpoint"]
+
+[node name="road250" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(796, 2321)
+scale = Vector2(0.2, 0.2)
+
+[node name="road251" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(841, 2321)
+scale = Vector2(0.2, 0.2)
+
+[node name="road296" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(1004.99994, 2320)
+rotation = 3.1415927
+scale = Vector2(0.2, 0.2)
+
+[node name="road252" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(889, 2321)
+scale = Vector2(0.2, 0.2)
+
+[node name="road253" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(934, 2321)
+scale = Vector2(0.2, 0.2)
+
+[node name="road254" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(981, 2321)
+scale = Vector2(0.2, 0.2)
+
+[node name="road255" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(1026, 2321)
+scale = Vector2(0.2, 0.2)
+
+[node name="road297" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(1189.9999, 2320)
+rotation = 3.1415927
+scale = Vector2(0.2, 0.2)
+
+[node name="road256" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(1074, 2321)
+scale = Vector2(0.2, 0.2)
+
+[node name="road257" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(1119, 2321)
+scale = Vector2(0.2, 0.2)
+
+[node name="road258" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(1166, 2321)
+scale = Vector2(0.2, 0.2)
+
+[node name="road259" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(1211, 2321)
+scale = Vector2(0.2, 0.2)
+
+[node name="road298" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(1374.9999, 2320)
+rotation = 3.1415927
+scale = Vector2(0.2, 0.2)
+
+[node name="road260" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(1259, 2321)
+scale = Vector2(0.2, 0.2)
+
+[node name="road261" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(1304, 2321)
+scale = Vector2(0.2, 0.2)
+
+[node name="road262" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(1351, 2321)
+scale = Vector2(0.2, 0.2)
+
+[node name="road263" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(1396, 2321)
+scale = Vector2(0.2, 0.2)
+
+[node name="road297" parent="road263" instance=ExtResource("4_nsdte")]
+position = Vector2(1189.9999, 2320)
+rotation = 3.1415927
+scale = Vector2(0.2, 0.2)
+
+[node name="road256" parent="road263" instance=ExtResource("4_nsdte")]
+position = Vector2(1074, 2321)
+scale = Vector2(0.2, 0.2)
+
+[node name="road257" parent="road263" instance=ExtResource("4_nsdte")]
+position = Vector2(1119, 2321)
+scale = Vector2(0.2, 0.2)
+
+[node name="road258" parent="road263" instance=ExtResource("4_nsdte")]
+position = Vector2(1166, 2321)
+scale = Vector2(0.2, 0.2)
+
+[node name="road259" parent="road263" instance=ExtResource("4_nsdte")]
+position = Vector2(1211, 2321)
+scale = Vector2(0.2, 0.2)
+
+[node name="road298" parent="road263" instance=ExtResource("4_nsdte")]
+position = Vector2(1374.9999, 2320)
+rotation = 3.1415927
+scale = Vector2(0.2, 0.2)
+
+[node name="road260" parent="road263" instance=ExtResource("4_nsdte")]
+position = Vector2(1259, 2321)
+scale = Vector2(0.2, 0.2)
+
+[node name="road261" parent="road263" instance=ExtResource("4_nsdte")]
+position = Vector2(1304, 2321)
+scale = Vector2(0.2, 0.2)
+
+[node name="road262" parent="road263" instance=ExtResource("4_nsdte")]
+position = Vector2(1351, 2321)
+scale = Vector2(0.2, 0.2)
+
+[node name="road263" parent="road263" instance=ExtResource("4_nsdte")]
+position = Vector2(1396, 2321)
+scale = Vector2(0.2, 0.2)
+
+[node name="road299" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(3642.9995, 16567)
+rotation = 3.1415927
+scale = Vector2(0.2, 0.2)
+
+[node name="road264" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(3526.9998, 16568)
+scale = Vector2(0.2, 0.2)
+
+[node name="road265" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(3571.9998, 16568)
+scale = Vector2(0.2, 0.2)
+
+[node name="road266" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(3618.9998, 16568)
+scale = Vector2(0.2, 0.2)
+
+[node name="road267" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(3663.9998, 16568)
+scale = Vector2(0.2, 0.2)
+
+[node name="road300" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(3827.9995, 16567)
+rotation = 3.1415927
+scale = Vector2(0.2, 0.2)
+
+[node name="road268" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(3711.9998, 16568)
+scale = Vector2(0.2, 0.2)
+
+[node name="road269" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(3756.9998, 16568)
+scale = Vector2(0.2, 0.2)
+
+[node name="road270" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(3803.9998, 16568)
+scale = Vector2(0.2, 0.2)
+
+[node name="road271" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(3848.9998, 16568)
+scale = Vector2(0.2, 0.2)
+
+[node name="finish" parent="." instance=ExtResource("7_t45sv")]
+position = Vector2(3897, 16565)
+
+[node name="road301" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(3272.9998, 16566)
+rotation = 3.1415927
+scale = Vector2(0.2, 0.2)
+
+[node name="road272" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(3157, 16567)
+scale = Vector2(0.2, 0.2)
+
+[node name="road273" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(3202, 16567)
+scale = Vector2(0.2, 0.2)
+
+[node name="road274" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(3249, 16567)
+scale = Vector2(0.2, 0.2)
+
+[node name="road275" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(3294, 16567)
+scale = Vector2(0.2, 0.2)
+
+[node name="road302" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(3457.9998, 16566)
+rotation = 3.1415927
+scale = Vector2(0.2, 0.2)
+
+[node name="road276" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(3342, 16567)
+scale = Vector2(0.2, 0.2)
+
+[node name="road277" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(3387, 16567)
+scale = Vector2(0.2, 0.2)
+
+[node name="road278" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(3434, 16567)
+scale = Vector2(0.2, 0.2)
+
+[node name="road279" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(3479, 16567)
+scale = Vector2(0.2, 0.2)
+
+[node name="road303" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(2903.9995, 16566)
+rotation = 3.1415927
+scale = Vector2(0.2, 0.2)
+
+[node name="road280" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(2787.9998, 16567)
+scale = Vector2(0.2, 0.2)
+
+[node name="road281" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(2832.9998, 16567)
+scale = Vector2(0.2, 0.2)
+
+[node name="road282" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(2879.9998, 16567)
+scale = Vector2(0.2, 0.2)
+
+[node name="road283" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(2924.9998, 16567)
+scale = Vector2(0.2, 0.2)
+
+[node name="road304" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(3088.9995, 16566)
+rotation = 3.1415927
+scale = Vector2(0.2, 0.2)
+
+[node name="road284" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(2972.9998, 16567)
+scale = Vector2(0.2, 0.2)
+
+[node name="road285" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(3017.9998, 16567)
+scale = Vector2(0.2, 0.2)
+
+[node name="road286" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(3064.9998, 16567)
+scale = Vector2(0.2, 0.2)
+
+[node name="road287" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(3109.9998, 16567)
+scale = Vector2(0.2, 0.2)
+
+[node name="road305" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(2533.9998, 16565)
+rotation = 3.1415927
+scale = Vector2(0.2, 0.2)
+
+[node name="road288" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(2418, 16566)
+scale = Vector2(0.2, 0.2)
+
+[node name="road289" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(2463, 16566)
+scale = Vector2(0.2, 0.2)
+
+[node name="road290" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(2510, 16566)
+scale = Vector2(0.2, 0.2)
+
+[node name="road291" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(2555, 16566)
+scale = Vector2(0.2, 0.2)
+
+[node name="road306" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(2718.9998, 16565)
+rotation = 3.1415927
+scale = Vector2(0.2, 0.2)
+
+[node name="road292" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(2603, 16566)
+scale = Vector2(0.2, 0.2)
+
+[node name="road293" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(2648, 16566)
+scale = Vector2(0.2, 0.2)
+
+[node name="road294" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(2695, 16566)
+scale = Vector2(0.2, 0.2)
+
+[node name="road295" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(2740, 16566)
+scale = Vector2(0.2, 0.2)
+
+[node name="road307" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(2164.9995, 16562)
+rotation = 3.1415927
+scale = Vector2(0.2, 0.2)
+
+[node name="road308" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(2049, 16563)
+scale = Vector2(0.2, 0.2)
+
+[node name="road309" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(2094, 16563)
+scale = Vector2(0.2, 0.2)
+
+[node name="road310" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(2141, 16563)
+scale = Vector2(0.2, 0.2)
+
+[node name="road311" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(2186, 16563)
+scale = Vector2(0.2, 0.2)
+
+[node name="road312" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(2349.9995, 16562)
+rotation = 3.1415927
+scale = Vector2(0.2, 0.2)
+
+[node name="road313" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(2234, 16563)
+scale = Vector2(0.2, 0.2)
+
+[node name="road314" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(2279, 16563)
+scale = Vector2(0.2, 0.2)
+
+[node name="road315" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(2326, 16563)
+scale = Vector2(0.2, 0.2)
+
+[node name="road316" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(2371, 16563)
+scale = Vector2(0.2, 0.2)
+
+[node name="road317" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(1794.9999, 16561)
+rotation = 3.1415927
+scale = Vector2(0.2, 0.2)
+
+[node name="road318" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(1679.0001, 16562)
+scale = Vector2(0.2, 0.2)
+
+[node name="road319" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(1724.0001, 16562)
+scale = Vector2(0.2, 0.2)
+
+[node name="road320" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(1771.0001, 16562)
+scale = Vector2(0.2, 0.2)
+
+[node name="road321" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(1816.0001, 16562)
+scale = Vector2(0.2, 0.2)
+
+[node name="road322" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(1979.9999, 16561)
+rotation = 3.1415927
+scale = Vector2(0.2, 0.2)
+
+[node name="road323" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(1864.0001, 16562)
+scale = Vector2(0.2, 0.2)
+
+[node name="road324" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(1909.0001, 16562)
+scale = Vector2(0.2, 0.2)
+
+[node name="road325" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(1956.0001, 16562)
+scale = Vector2(0.2, 0.2)
+
+[node name="road326" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(2001.0001, 16562)
+scale = Vector2(0.2, 0.2)
+
+[node name="road327" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(1425.9996, 16561)
+rotation = 3.1415927
+scale = Vector2(0.2, 0.2)
+
+[node name="road328" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(1309.9999, 16562)
+scale = Vector2(0.2, 0.2)
+
+[node name="road329" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(1354.9999, 16562)
+scale = Vector2(0.2, 0.2)
+
+[node name="road330" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(1401.9999, 16562)
+scale = Vector2(0.2, 0.2)
+
+[node name="road331" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(1446.9999, 16562)
+scale = Vector2(0.2, 0.2)
+
+[node name="road332" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(1610.9996, 16561)
+rotation = 3.1415927
+scale = Vector2(0.2, 0.2)
+
+[node name="road333" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(1494.9999, 16562)
+scale = Vector2(0.2, 0.2)
+
+[node name="road334" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(1539.9999, 16562)
+scale = Vector2(0.2, 0.2)
+
+[node name="road335" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(1586.9999, 16562)
+scale = Vector2(0.2, 0.2)
+
+[node name="road336" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(1631.9999, 16562)
+scale = Vector2(0.2, 0.2)
+
+[node name="road337" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(1077.0001, 16561)
+scale = Vector2(0.2, 0.2)
+
+[node name="road338" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(1240.9999, 16560)
+rotation = 3.1415927
+scale = Vector2(0.2, 0.2)
+
+[node name="road339" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(1125.0001, 16561)
+scale = Vector2(0.2, 0.2)
+
+[node name="road340" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(1170.0001, 16561)
+scale = Vector2(0.2, 0.2)
+
+[node name="road341" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(1217.0001, 16561)
+scale = Vector2(0.2, 0.2)
+
+[node name="road342" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(1262.0001, 16561)
+scale = Vector2(0.2, 0.2)
+
+[node name="road343" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(1040.9998, 16311)
+rotation = 3.1415927
+scale = Vector2(0.2, 0.2)
+
+[node name="road344" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(925, 16312)
+scale = Vector2(0.2, 0.2)
+
+[node name="road345" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(970, 16312)
+scale = Vector2(0.2, 0.2)
+
+[node name="road346" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(1017, 16312)
+scale = Vector2(0.2, 0.2)
+
+[node name="road347" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(1062, 16312)
+scale = Vector2(0.2, 0.2)
+
+[node name="road348" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(1225.9998, 16311)
+rotation = 3.1415927
+scale = Vector2(0.2, 0.2)
+
+[node name="road349" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(1110, 16312)
+scale = Vector2(0.2, 0.2)
+
+[node name="road350" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(1155, 16312)
+scale = Vector2(0.2, 0.2)
+
+[node name="road351" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(1202, 16312)
+scale = Vector2(0.2, 0.2)
+
+[node name="road352" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(1247, 16312)
+scale = Vector2(0.2, 0.2)
+
+[node name="road353" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(671, 16310)
+rotation = 3.1415927
+scale = Vector2(0.2, 0.2)
+
+[node name="road354" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(555.00024, 16311)
+scale = Vector2(0.2, 0.2)
+
+[node name="road355" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(600.00024, 16311)
+scale = Vector2(0.2, 0.2)
+
+[node name="road356" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(647.00024, 16311)
+scale = Vector2(0.2, 0.2)
+
+[node name="road357" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(692.00024, 16311)
+scale = Vector2(0.2, 0.2)
+
+[node name="road358" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(856, 16310)
+rotation = 3.1415927
+scale = Vector2(0.2, 0.2)
+
+[node name="road359" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(740.00024, 16311)
+scale = Vector2(0.2, 0.2)
+
+[node name="road360" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(785.00024, 16311)
+scale = Vector2(0.2, 0.2)
+
+[node name="road361" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(832.00024, 16311)
+scale = Vector2(0.2, 0.2)
+
+[node name="road362" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(877.00024, 16311)
+scale = Vector2(0.2, 0.2)
+
+[node name="road363" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(301.99976, 16310)
+rotation = 3.1415927
+scale = Vector2(0.2, 0.2)
+
+[node name="road364" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(186, 16311)
+scale = Vector2(0.2, 0.2)
+
+[node name="road365" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(231, 16311)
+scale = Vector2(0.2, 0.2)
+
+[node name="road366" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(278, 16311)
+scale = Vector2(0.2, 0.2)
+
+[node name="road367" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(323, 16311)
+scale = Vector2(0.2, 0.2)
+
+[node name="road368" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(486.99976, 16310)
+rotation = 3.1415927
+scale = Vector2(0.2, 0.2)
+
+[node name="road369" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(371, 16311)
+scale = Vector2(0.2, 0.2)
+
+[node name="road370" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(416, 16311)
+scale = Vector2(0.2, 0.2)
+
+[node name="road371" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(463, 16311)
+scale = Vector2(0.2, 0.2)
+
+[node name="road372" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(508, 16311)
+scale = Vector2(0.2, 0.2)
+
+[node name="road373" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(-68, 16309)
+rotation = 3.1415927
+scale = Vector2(0.2, 0.2)
+
+[node name="road374" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(-183.99976, 16310)
+scale = Vector2(0.2, 0.2)
+
+[node name="road375" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(-138.99976, 16310)
+scale = Vector2(0.2, 0.2)
+
+[node name="road376" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(-91.999756, 16310)
+scale = Vector2(0.2, 0.2)
+
+[node name="road377" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(-46.999756, 16310)
+scale = Vector2(0.2, 0.2)
+
+[node name="road378" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(117, 16309)
+rotation = 3.1415927
+scale = Vector2(0.2, 0.2)
+
+[node name="road379" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(1.0002441, 16310)
+scale = Vector2(0.2, 0.2)
+
+[node name="road380" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(46.000244, 16310)
+scale = Vector2(0.2, 0.2)
+
+[node name="road381" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(93.000244, 16310)
+scale = Vector2(0.2, 0.2)
+
+[node name="road382" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(138.00024, 16310)
+scale = Vector2(0.2, 0.2)
+
+[node name="road383" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(-437.00024, 16306)
+rotation = 3.1415927
+scale = Vector2(0.2, 0.2)
+
+[node name="road384" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(-552.99976, 16307)
+scale = Vector2(0.2, 0.2)
+
+[node name="road385" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(-507.99976, 16307)
+scale = Vector2(0.2, 0.2)
+
+[node name="road386" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(-460.99976, 16307)
+scale = Vector2(0.2, 0.2)
+
+[node name="road387" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(-415.99976, 16307)
+scale = Vector2(0.2, 0.2)
+
+[node name="road388" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(-252.00024, 16306)
+rotation = 3.1415927
+scale = Vector2(0.2, 0.2)
+
+[node name="road389" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(-367.99976, 16307)
+scale = Vector2(0.2, 0.2)
+
+[node name="road390" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(-322.99976, 16307)
+scale = Vector2(0.2, 0.2)
+
+[node name="road391" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(-275.99976, 16307)
+scale = Vector2(0.2, 0.2)
+
+[node name="road392" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(-230.99976, 16307)
+scale = Vector2(0.2, 0.2)
+
+[node name="road393" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(-806.9999, 16305)
+rotation = 3.1415927
+scale = Vector2(0.2, 0.2)
+
+[node name="road394" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(-922.99963, 16306)
+scale = Vector2(0.2, 0.2)
+
+[node name="road395" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(-877.99963, 16306)
+scale = Vector2(0.2, 0.2)
+
+[node name="road396" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(-830.99963, 16306)
+scale = Vector2(0.2, 0.2)
+
+[node name="road397" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(-785.99963, 16306)
+scale = Vector2(0.2, 0.2)
+
+[node name="road398" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(-621.9999, 16305)
+rotation = 3.1415927
+scale = Vector2(0.2, 0.2)
+
+[node name="road399" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(-737.99963, 16306)
+scale = Vector2(0.2, 0.2)
+
+[node name="road400" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(-692.99963, 16306)
+scale = Vector2(0.2, 0.2)
+
+[node name="road401" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(-645.99963, 16306)
+scale = Vector2(0.2, 0.2)
+
+[node name="road402" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(-600.99963, 16306)
+scale = Vector2(0.2, 0.2)
+
+[node name="road403" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(-1176.0001, 16305)
+rotation = 3.1415927
+scale = Vector2(0.2, 0.2)
+
+[node name="road404" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(-1291.9999, 16306)
+scale = Vector2(0.2, 0.2)
+
+[node name="road405" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(-1246.9999, 16306)
+scale = Vector2(0.2, 0.2)
+
+[node name="road406" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(-1199.9999, 16306)
+scale = Vector2(0.2, 0.2)
+
+[node name="road407" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(-1154.9999, 16306)
+scale = Vector2(0.2, 0.2)
+
+[node name="road408" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(-991.0001, 16305)
+rotation = 3.1415927
+scale = Vector2(0.2, 0.2)
+
+[node name="road409" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(-1106.9999, 16306)
+scale = Vector2(0.2, 0.2)
+
+[node name="road410" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(-1061.9999, 16306)
+scale = Vector2(0.2, 0.2)
+
+[node name="road411" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(-1014.9999, 16306)
+scale = Vector2(0.2, 0.2)
+
+[node name="road412" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(-969.9999, 16306)
+scale = Vector2(0.2, 0.2)
+
+[node name="road413" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(-1524.9996, 16305)
+scale = Vector2(0.2, 0.2)
+
+[node name="road414" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(-1360.9999, 16304)
+rotation = 3.1415927
+scale = Vector2(0.2, 0.2)
+
+[node name="road415" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(-1476.9996, 16305)
+scale = Vector2(0.2, 0.2)
+
+[node name="road416" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(-1431.9996, 16305)
+scale = Vector2(0.2, 0.2)
+
+[node name="road417" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(-1384.9996, 16305)
+scale = Vector2(0.2, 0.2)
+
+[node name="road418" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(-1339.9996, 16305)
+scale = Vector2(0.2, 0.2)
+
+[node name="road234" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(709, 1238)
+scale = Vector2(0.2, 0.2)
+
+[node name="road419" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(824, 1243)
+rotation = -3.1415925
+scale = Vector2(0.2, 0.2)
+
+[node name="road235" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(713, 1169)
+scale = Vector2(0.2, 0.2)
+
+[node name="road420" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(825, 1170.0001)
+rotation = -3.1415925
+scale = Vector2(0.2, 0.2)
+
+[node name="road236" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(713, 1169)
+scale = Vector2(0.2, 0.2)
+
+[node name="road421" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(761.00006, 1150.0001)
+rotation = -3.1415925
+scale = Vector2(0.2, 0.2)
+
+[node name="road234" parent="road421" instance=ExtResource("4_nsdte")]
+position = Vector2(709, 1238)
+scale = Vector2(0.2, 0.2)
+
+[node name="road285" parent="road421" instance=ExtResource("4_nsdte")]
+position = Vector2(824, 1243)
+rotation = -3.1415925
+scale = Vector2(0.2, 0.2)
+
+[node name="road235" parent="road421" instance=ExtResource("4_nsdte")]
+position = Vector2(709, 1238)
+scale = Vector2(0.2, 0.2)
+
+[node name="road419" parent="road421" instance=ExtResource("4_nsdte")]
+position = Vector2(824, 1243)
+rotation = -3.1415925
+scale = Vector2(0.2, 0.2)
+
+[node name="road236" parent="road421" instance=ExtResource("4_nsdte")]
+position = Vector2(709, 1238)
+scale = Vector2(0.2, 0.2)
+
+[node name="road286" parent="road421" instance=ExtResource("4_nsdte")]
+position = Vector2(824, 1243)
+rotation = -3.1415925
+scale = Vector2(0.2, 0.2)
+
+[node name="road237" parent="road421" instance=ExtResource("4_nsdte")]
+position = Vector2(709, 1238)
+scale = Vector2(0.2, 0.2)
+
+[node name="road420" parent="road421" instance=ExtResource("4_nsdte")]
+position = Vector2(824, 1243)
+rotation = -3.1415925
+scale = Vector2(0.2, 0.2)
+
+[node name="road10" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(1489, 1098)
+scale = Vector2(0.2, 0.2)
+
+[node name="road13" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(1838, 1032)
+scale = Vector2(0.2, 0.2)
+
+[node name="road14" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(1751, 1031)
+scale = Vector2(0.2, 0.2)
+
+[node name="road13" parent="road14" instance=ExtResource("4_nsdte")]
+position = Vector2(1838, 1125)
+scale = Vector2(0.2, 0.2)
+
+[node name="road15" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(1804, 947)
+scale = Vector2(0.2, 0.2)
+
+[node name="road15" parent="road15" instance=ExtResource("4_nsdte")]
+position = Vector2(1804, 947)
+scale = Vector2(0.2, 0.2)
+
+[node name="road16" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(1694, 946)
+scale = Vector2(0.2, 0.2)
+
+[node name="road17" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(1624, 1016)
+scale = Vector2(0.2, 0.2)
+
+[node name="road15" parent="road17" instance=ExtResource("4_nsdte")]
+position = Vector2(1804, 947)
+scale = Vector2(0.2, 0.2)
+
+[node name="Bg2" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(2381, 1834)
+scale = Vector2(3, 3)
+texture = ExtResource("1_lo85r")
+
+[node name="road420" parent="Bg2" instance=ExtResource("4_nsdte")]
+position = Vector2(828, 1174)
+rotation = -3.1415925
+scale = Vector2(0.2, 0.2)
+
+[node name="road10" parent="Bg2" instance=ExtResource("4_nsdte")]
+position = Vector2(1604, 1104)
+scale = Vector2(0.2, 0.2)
+
+[node name="Loadidk" type="Sprite2D" parent="."]
+position = Vector2(3044, 4299)
+scale = Vector2(35.02778, 5.486111)
+texture = ExtResource("10_nsdte")
+
+[node name="road18" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(535, 960)
+scale = Vector2(0.2, 0.2)
+
+[node name="road19" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(483, 912)
+scale = Vector2(0.2, 0.2)
+
+[node name="road20" parent="." instance=ExtResource("4_nsdte")]
+position = Vector2(560, 940)
 scale = Vector2(0.2, 0.2)

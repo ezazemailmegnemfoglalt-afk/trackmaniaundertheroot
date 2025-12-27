@@ -1,8 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://dt0rcd23nvyg"]
+[gd_scene load_steps=11 format=3 uid="uid://dt0rcd23nvyg"]
 
 [ext_resource type="Script" uid="uid://c4cbhp8ibtam2" path="res://objects/lemelkedo.gd" id="1_8u72n"]
 [ext_resource type="Texture2D" uid="uid://ck0d66p8gpxt4" path="res://images/emelkedo.png" id="1_n36mk"]
-[ext_resource type="PackedScene" uid="uid://d0xvrysceu8ot" path="res://the_car/car1.tscn" id="2_5df4y"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_5df4y"]
 a = Vector2(572, 405)
@@ -85,6 +84,3 @@ position = Vector2(104, 314)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="szopacs"]
 position = Vector2(385, -349)
 shape = SubResource("SegmentShape2D_n36mk")
-
-[node name="car" parent="." instance=ExtResource("2_5df4y")]
-position = Vector2(325, 203)
